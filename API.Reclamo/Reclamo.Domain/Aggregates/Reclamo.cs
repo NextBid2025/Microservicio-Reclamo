@@ -64,12 +64,12 @@ public class Aggregate_Reclamo
     /// <summary>
     /// Constructor privado para EF.
     /// </summary>
-    private Reclamo() { }
+    private Aggregate_Reclamo() { }
 
     /// <summary>
     /// Inicializa una nueva instancia de la clase <see cref="Reclamo"/>.
     /// </summary>
-    public Reclamo(
+    public Aggregate_Reclamo(
         ReclamoId id,
         UsuarioId usuarioId,
         SubastaId? subastaId,
