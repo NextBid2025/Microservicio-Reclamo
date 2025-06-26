@@ -1,4 +1,3 @@
-
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -33,11 +32,11 @@ namespace Reclamo.Application.Handlers
             if (reclamo == null)
                 throw new InvalidOperationException("Reclamo no encontrado.");
 
-            // Asegúrate que la firma sea Resolver(Resolucion, EstadoReclamo)
-            reclamo.Resolver(resolucion, estadoFinal);
+          
+            reclamo.Resolver(estadoFinal, resolucion);
             await _reclamoRepository.UpdateAsync(reclamo);
 
-            var fechaResolucion = DateTime.UtcNow; // O usa reclamo.FechaResolucion si existe
+            var fechaResolucion = DateTime.UtcNow; 
 
             var reclamoResueltoEvent = new ReclamoResueltoEvent(
                 reclamo.Id.Value,

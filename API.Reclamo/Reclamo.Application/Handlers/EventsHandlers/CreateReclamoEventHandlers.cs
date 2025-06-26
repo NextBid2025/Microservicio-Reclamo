@@ -9,9 +9,9 @@ namespace Reclamo.Application.Handlers.EventsHandlers
 {
     /// <summary>
     /// Manejador de eventos para la creación de reclamos.
-    /// Envía el evento <see cref="ReclamoCreadoEvent"/> a la cola de RabbitMQ.
+    /// Envía el evento <see cref="ReclamoCreateEvent"/> a la cola de RabbitMQ.
     /// </summary>
-    public class CreateReclamoEventHandler : INotificationHandler<ReclamoCreadoEvent>
+    public class CreateReclamoEventHandler : INotificationHandler<ReclamoCreateEvent>
     {
         private readonly ISendEndpointProvider _sendEndpointProvider;
 
@@ -27,7 +27,7 @@ namespace Reclamo.Application.Handlers.EventsHandlers
         /// <summary>
         /// Maneja el evento de creación de reclamo y lo envía a la cola de RabbitMQ.
         /// </summary>
-        public async Task Handle(ReclamoCreadoEvent notification, CancellationToken cancellationToken)
+        public async Task Handle(ReclamoCreateEvent notification, CancellationToken cancellationToken)
         {
             Console.WriteLine($"Reclamo creado: {notification.Motivo}");
             await _sendEndpointProvider.Send(notification, cancellationToken);

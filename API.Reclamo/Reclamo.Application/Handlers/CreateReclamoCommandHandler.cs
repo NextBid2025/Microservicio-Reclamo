@@ -44,7 +44,7 @@ namespace Reclamo.Application.Handlers
 
             await _reclamoRepository.AddAsync(reclamo);
 
-            var reclamoCreadoEvent = new ReclamoCreadoEvent(
+            var reclamoCreadoEvent = new ReclamoCreateEvent(
                 reclamo.Id.Value,
                 reclamo.UsuarioId.Value,
                 reclamo.SubastaId?.Value,

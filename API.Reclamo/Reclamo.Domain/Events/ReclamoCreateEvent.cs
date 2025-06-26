@@ -7,7 +7,7 @@ namespace Reclamo.Domain.Events;
 /// Evento de dominio que representa la creación de un reclamo.
 /// Contiene información relevante del reclamo recién creado.
 /// </summary>
-public class ReclamoCreadoEvent : INotification
+public class ReclamoCreateEvent : INotification
 {
     public string ReclamoId { get; }
     public string UsuarioId { get; }
@@ -20,9 +20,9 @@ public class ReclamoCreadoEvent : INotification
     public DateTime FechaCreacion { get; }
 
     /// <summary>
-    /// Inicializa una nueva instancia del evento <see cref="ReclamoCreadoEvent"/>.
+    /// Inicializa una nueva instancia del evento <see cref="ReclamoCreateEvent"/>.
     /// </summary>
-    public ReclamoCreadoEvent(
+    public ReclamoCreateEvent(
         string reclamoId,
         string usuarioId,
         string? subastaId,
